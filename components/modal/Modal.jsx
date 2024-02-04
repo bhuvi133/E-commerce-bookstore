@@ -34,13 +34,18 @@ const Modal = ({bookData,setOpenModal}) => {
           </div>
           <div className="modal-add-to-cart">
             <input type="number" min="1" max="100" className="modal-add-to-cart-input"/>
-            <button className="modal-add-to-cart-btn">
+           <button onClick={() => addToCart(bookData, qty)} className="modal-add-to-cart-btn">
             <i class="bi bi-cart-plus-fill"></i>
               Add To Cart
             </button>
           </div>
-          <div className="modal-content-info-link">
+                    <Link
+                        onClick={() => setOpenModal(false)}
+          <div className="modal-content-info-link"
+               to={`/book/${id}`}
+          >
             See More Details
+               </Link>
           </div>
             </div>
         </div>
